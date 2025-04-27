@@ -1,0 +1,63 @@
+{
+    "system": {
+        "enable_analytics": false,
+        "log_level": "info",
+        "auto_update": true
+    },
+    "head_tracking": {
+        "enabled": true,
+        "sensitivity_x": 0.1,
+        "sensitivity_y": 0.05,
+        "speed_gain_x": 120.0,
+        "speed_gain_y": 150.0,
+        "neutral_threshold_x": 0.08,
+        "neutral_threshold_y": 0.05,
+        "smoothness_factor": 0.3,
+        "cursor_acceleration": 1.5,
+        "deadzone_size": 0.08,
+        "response_curve": 2.0,
+        "invert_x": false,
+        "invert_y": false,
+        "dynamic_sensitivity": true
+    },
+    "blink_detection": {
+        "enabled": true,
+        "ear_threshold": 0.17,
+        "min_blink_frames": 3,
+        "max_blink_frames": 8,
+        "double_blink_timeout": 0.4,
+        "cooldown": 0.2,
+        "enable_sanity_check": true,
+        "ear_hysteresis": 0.03
+    },
+    "actions": {
+        "single_blink_action": "left_click",
+        "double_blink_action": "double_click",
+        "long_blink_duration": 1.5,
+        "click_hold_duration": 0.5,
+        "single_blink": "left_click",
+        "double_blink": "double_click",
+        "long_blink_action": "drag",
+        "drag_threshold": 30.0
+    },
+    "ui": {
+        "show_camera_preview": true,
+        "cursor_visualization": true,
+        "visual_feedback_color": "#ff0000",
+        "mirror_camera": true,
+        "show_fps": false
+    },
+    "sensitivity_x": 0.1,
+    "sensitivity_y": 0.05,
+    "speed_gain_x": 120.0,
+    "speed_gain_y": 150.0,
+    "neutral_threshold_x": 0.08,
+    "neutral_threshold_y": 0.05,
+    "blink_threshold": 0.16,
+    "blink_frames": 3,
+    "blink_sequence_threshold": 0.4,
+    "advanced": {
+        "kalman_process_noise": 0.01,
+        "kalman_measurement_noise": 5.0
+    }
+}
