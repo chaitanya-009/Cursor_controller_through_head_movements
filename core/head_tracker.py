@@ -5,7 +5,7 @@ from filterpy.kalman import KalmanFilter
 class HeadTracker:
     def __init__(self, config, cursor):
         self.config = config
-        self.cursor = cursor  # Store cursor reference for screen dimensions
+        self.cursor = cursor  
         self.kf = None
         self.current_x = self.current_y = 0
         self.dx_accum = self.dy_accum = 0
@@ -64,12 +64,12 @@ class HeadTracker:
             self.current_x = np.clip(
                 self.current_x + move_x, 
                 0, 
-                self.cursor.screen_width  # Now properly references cursor's screen_width
+                self.cursor.screen_width  
             )
             self.current_y = np.clip(
                 self.current_y + move_y, 
                 0, 
-                self.cursor.screen_height  # References cursor's screen_height
+                self.cursor.screen_height  
             )
         
         return self.current_x, self.current_y

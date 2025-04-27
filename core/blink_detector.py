@@ -47,7 +47,7 @@ class BlinkDetector:
                 self._update_blink_sequence()
                 return "single"
 
-        # Check for pending multi-blink actions
+        
         action = self._check_pending_actions()
         return action
 

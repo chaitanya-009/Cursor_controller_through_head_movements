@@ -224,7 +224,7 @@ class ControlWindow(QMainWindow):
             qt_image = QImage(rgb_image.data, w, h, QImage.Format.Format_RGB888)
             self.camera_label.setPixmap(QPixmap.fromImage(qt_image))
             
-            # Update status labels
+            
             self.status_labels['cursor'][1].setText(f"{int(x)}, {int(y)}")
             
         except Exception as e:
@@ -241,12 +241,12 @@ class ControlWindow(QMainWindow):
         dialog = SettingsDialog(self)
         dialog.settings_tabs.config_updated.connect(self.handle_config_update)
         
-        # Show dialog modally
+        
         if dialog.exec() == QDialog.DialogCode.Accepted:
-            # Handle OK button click if needed
+            
             pass
         else:
-            # Handle Cancel button click if needed
+            
             pass
     
     def show_help(self):
@@ -271,7 +271,7 @@ class SettingsDialog(QDialog):
             font-family: 'Arial';
         """)
         
-        # Create settings tabs
+        
         self.settings_tabs = SettingsTabs()
         
         # Dialog buttons
@@ -300,7 +300,7 @@ class SettingsTabs(QWidget):
         head_group = QGroupBox("Head Tracking")
         head_layout = QFormLayout()
         
-        # Add new sliders
+        
         self.cursor_acceleration = self._create_slider(
             "Cursor Acceleration", 
             self.config['head_tracking']['cursor_acceleration'], 
@@ -330,7 +330,7 @@ class SettingsTabs(QWidget):
         blink_group = QGroupBox("Blink Detection")
         blink_layout = QFormLayout()
         
-        # New blink settings
+        
         self.blink_cooldown = self._create_slider(
             "Blink Cooldown", 
             self.config['blink_detection']['cooldown'], 
@@ -370,7 +370,7 @@ class SettingsTabs(QWidget):
         action_group.setLayout(action_layout)
         layout.addWidget(action_group)
 
-        # Advanced Section
+        
         advanced_group = QGroupBox("Advanced")
         advanced_layout = QFormLayout()
         
@@ -403,7 +403,7 @@ class SettingsTabs(QWidget):
         value_label = QLabel()
         slider = QSlider(Qt.Orientation.Horizontal)
         
-        # Handle different value types
+        
         if isinstance(initial, float):
             scale = 1000 if step < 0.01 else 100
         else:

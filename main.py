@@ -2,7 +2,7 @@
 import sys
 import os
 if sys.platform == "darwin":
-    os.environ["QT_MAC_DISABLE_CONSOLE"] = "1"  # Hide terminal
+    os.environ["QT_MAC_DISABLE_CONSOLE"] = "1"  
     if getattr(sys, 'frozen', False):
         os.environ["QT_MAC_WANTS_LAYER"] = "1"
 from PyQt6.QtWidgets import QApplication
@@ -23,7 +23,7 @@ class AppController:
     def show_control_window(self, os_type):
         self.control_window = ControlWindow(os_type)
         self.control_window.show()
-        self.os_window.close()  # Close the OS selection window
+        self.os_window.close()  
 
 if __name__ == "__main__":
     AppController()

@@ -95,20 +95,20 @@ class OSButton(QPushButton):
         painter = QPainter(self)
         painter.setRenderHint(QPainter.RenderHint.Antialiasing)
         
-        # Calculate animated values
+        
         current_bg = self._highlight_color if self._is_selected else self._base_color
         current_border = self._selected_border_color if self._is_selected else self._border_color
         
-        # Apply click animation
+        
         if self._click_progress > 0:
             current_bg = current_bg.darker(100 + int(10 * self._click_progress))
         
-        # Draw background
+        
         painter.setBrush(QBrush(current_bg))
         painter.setPen(QPen(current_border, 2 + 2 * self._selection_progress))
         painter.drawRoundedRect(10, 10, self.width()-20, self.height()-20, 12, 12)
         
-        # Draw selection glow
+       
         if self._is_selected:
             painter.setPen(QPen(QColor(14, 122, 254, 100), 6))
             painter.setBrush(Qt.BrushStyle.NoBrush)
@@ -208,7 +208,7 @@ class OSSelectionWindow(QMainWindow):
             self.os_selected.emit(self.selected_os)
             self.close()
         print(f"Selected OS: {self.selected_os}")
-        # Add your window transition logic here
+        
 
 if __name__ == "__main__":
     app = QApplication(sys.argv)
